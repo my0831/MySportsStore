@@ -20,7 +20,7 @@ namespace MySportsStore.Domain.Concrete
 
         public IEnumerable<Product> Products
         {
-            get { return Products; }
+            get { return _products; }
         }
 
     }

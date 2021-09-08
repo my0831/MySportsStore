@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MySportsStore.Domain.Entities;
+
 
 namespace MySportsStore.WebApp.Controllers
 {
@@ -12,10 +14,11 @@ namespace MySportsStore.WebApp.Controllers
     {
         private IProductsRepository repository = new InMemoryProductRepository();
 
-        // GET: Product
-        public ActionResult Index()
+       
+        public ViewResult List()
         {
-            return View();
-        }
+            return View(repository.Products);
+
+            }
     }
 }
