@@ -12,7 +12,7 @@ namespace MySportsStore.Domain.Concrete
     {
         private List<Product> _products = new List<Product>
         {
-               new Product {Name="Football", Price=25},
+            new Product {Name="Football", Price=25},
             new Product {Name="Surf Board", Price=179},
             new Product {Name="Running shoes", Price=95},
         };
