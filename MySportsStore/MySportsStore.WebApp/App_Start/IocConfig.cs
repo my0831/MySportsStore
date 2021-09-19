@@ -22,7 +22,7 @@ namespace MySportsStore.WebApp
 
             builder
                 .RegisterInstance<IProductsRepository>(new
-            InMemoryProductRepository())
+            EFProductRepository())
                 .PropertiesAutowired();
 
             var container = builder.Build();
