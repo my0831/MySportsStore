@@ -25,6 +25,20 @@ namespace MySportsStore.WebApp
             EFProductRepository())
                 .PropertiesAutowired();
 
+            //builder
+            //    .RegisterInstance<IOrderProcessor>(new
+            //EmailOrderProcessor(new EmailSettings()))
+            //    .PropertiesAutowired();
+
+
+            builder.RegisterType<EmailSettings>()
+                .PropertiesAutowired();
+
+            builder.RegisterType<EmailOrderProcessor>()
+                .As<IOrderProcessor>()
+                .PropertiesAutowired();
+
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }

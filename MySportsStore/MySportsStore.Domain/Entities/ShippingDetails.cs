@@ -25,6 +25,9 @@ namespace MySportsStore.Domain.Entities
         public string Zip { get; set; }
         [Required(ErrorMessage = "Please enter a country name")]
         public string Country { get; set; }
+
+        public string Email { get; set; }
+
         public bool GiftWrap { get; set; }
     }
 }
