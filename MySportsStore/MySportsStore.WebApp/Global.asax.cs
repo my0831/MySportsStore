@@ -1,3 +1,5 @@
+using MySportsStore.Domain.Entities;
+using MySportsStore.WebApp.Infrastructure.Binders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace MySportsStore.WebApp
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             IocConfig.ConfigIoc();
+            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
 
         }
     }
