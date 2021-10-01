@@ -7,6 +7,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace MySportsStore.Domain.Concrete
 {
@@ -28,6 +30,12 @@ namespace MySportsStore.Domain.Concrete
                 smtpClient.Credentials = new NetworkCredential(emailSettings.Username, emailSettings.Password);
                 if (emailSettings.WriteAsFile)
                 {
+                    if (!Directory.Exists(emailSettings.FileLocation))
+                    {
+                        Directory.CreateDirectory(emailSettings.FileLocation);
+                    
+                    }
+
                     smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
                     smtpClient.PickupDirectoryLocation = emailSettings.FileLocation;
                     smtpClient.EnableSsl = false;
